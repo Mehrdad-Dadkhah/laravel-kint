@@ -15,6 +15,7 @@
 		"kint-php/kint": "~2.0"
 	},
 	"autoload": {
+		"files": ["init.php"],
 		"psr-4": {
 			"Conner\\Kint\\": "src/"
 		}
