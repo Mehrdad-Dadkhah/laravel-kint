@@ -85,21 +85,11 @@ if (!function_exists('dd')) {
             die(1);
         }
 
-        $stash = Kint::settings();
-
-        if (Kint::$enabled_mode !== Kint::MODE_TEXT) {
-            Kint::$enabled_mode = Kint::MODE_PLAIN;
-            if (PHP_SAPI === 'cli' && Kint::$cli_detection === true) {
-                Kint::$enabled_mode = Kint::$mode_default_cli;
-            }
-        }
-
         $args = func_get_args();
+
         $out = call_user_func_array(array('Kint', 'dump'), $args);
 
-        Kint::settings($stash);
-
-        return $out;
+        die($out);
     }
 
     Kint::$aliases[] = 'dd';

@@ -9,6 +9,8 @@ I love Kint, but it's a little hard to get it to work perfectly within Laravel. 
 [Laravel 5 Documentation](https://github.com/rtconner/laravel-kint/tree/laravel-5)
 [Laravel 4 Documentation](https://github.com/rtconner/laravel-kint/tree/laravel-4)
 
+Laravel 5 branch update to use last version of Kint(v2) by [Mehrdad Dadkhah](https://github.com/Mehrdad-Dadkhah/laravel-kint).
+
 ### Installation
 
 Install with composer
@@ -32,13 +34,11 @@ Optionally setup the [config/kint.php](config/kint.php) file
 Use Kint as you would normally.
 
 ```php
+dd($var); // debug dump and die
+
 d($var); // debug dump
 
-ddd($var); // debug dump and die
-
 s($var); // simple print
-
-sd($var); // simple print and die
 ```
 
 There is an also an added feature to allow you to easily dump variables from within **blade templates**.
@@ -47,9 +47,7 @@ Notice no semi-colon at the end, and must be on their own line of code.
 ```
 @d($var)
 
-@ddd($var)
-
-@sd($var)
+@dd($var)
 
 @s($var)
 ```
@@ -67,20 +65,13 @@ See [Kint documentation](https://github.com/kint-php/kint) for details on config
 
 ### How Do I Override Laravel's dd() method?
 
-There is no clean way. You will have to edit the `public/index.php` file in your app. Place the following code directly after
-`require __DIR__.'/../bootstrap/autoload.php';`
+This package overwrite laravel dd by default, you can comment this line from public/index.php and only use d() and s() functions.
 
-```php
-/**
- * Override Laravel's built-in dd() method to call Kint::dump()
- */
-function dd()
-{
-    $_ = func_get_args();
-    call_user_func_array( array( 'Kint', 'dump' ), $_ );
-    die;
-}
 ```
+define('KINT_DIR', '/path_to_your_project_root/vendor/rtconner/laravel-kint');
+```
+
+Be carefull when change your app directory please update this line.
 
 #### Credits
 
