@@ -12,8 +12,7 @@
 	],
 	"require": {
 		"php": ">=5.3",
-		"kint-php/kint": "~2.0",
-		"vlucas/phpdotenv": "~2.4"
+		"kint-php/kint": "~2.0"
 	},
 	"autoload": {
 		"files": ["init.php"],
@@ -23,10 +22,10 @@
 	},
 	"scripts": {
         "post-install-cmd": [
-            "php -f ./loadEnvironment.php"
+            "php -f ./defineKintDir.php"
         ],
         "pre-update-cmd": [
-            "php -f ./loadEnvironment.php"
+            "php -f ./defineKintDir.php"
         ]
     },
 	"minimum-stability": "dev"
