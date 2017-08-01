@@ -44,9 +44,7 @@ class KintServiceProvider extends ServiceProvider {
 		}
 		
 		foreach($configs as $key => $val) {
-			if($key == 'enabled') {
-				Kint::enabled($val);
-			} elseif(property_exists('Kint', $key)) {
+			if(property_exists('Kint', $key)) {
 				Kint::$$key = $val;
 			}
 		}
