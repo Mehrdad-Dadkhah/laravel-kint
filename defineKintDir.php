@@ -9,12 +9,12 @@ foreach ($lines as $key => $text) {
         $changeLine = $key;
     }
 
-    if (trim($text) == "define('KINT_DIR', '" . __DIR__ . "');") {
+    if (trim($text) == "require '" . __DIR__ . "/init_helpers.php';") {
         $update = false;
     }
 }
 
 if ($update) {
-    $lines[$changeLine] = "\ndefine('KINT_DIR', '" . __DIR__ . "');\n" . $lines[$changeLine];
+    $lines[$changeLine] = "\nrequire '" . __DIR__ . "/init_helpers.php';\n" . $lines[$changeLine];
     file_put_contents($basePath . '/public/index.php', implode("\n", $lines));
 }
