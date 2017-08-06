@@ -19,13 +19,5 @@
 			"Conner\\Kint\\": "src/"
 		}
 	},
-	"scripts": {
-        "post-install-cmd": [
-            "php -f ./defineKintDir.php"
-        ],
-        "pre-update-cmd": [
-            "php -f ./defineKintDir.php"
-        ]
-    },
 	"minimum-stability": "dev"
 }

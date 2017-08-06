@@ -1,10 +1,17 @@
 Seamless Laravel 5 / Kint Integration
 ============
+This package add d() and s() function for help you debigging with beautifull trace of code. 
+If you want find a dd() of laravel and you don't know the location of it you can use this package.
+
+![Screenshot1](https://github.com/Mehrdad-Dadkhah/laravel-kint/images/sample-kint1.png)
+![Screenshot2](https://github.com/Mehrdad-Dadkhah/laravel-kint/images/sample-kint1.png)
 
 [![Laravel](https://img.shields.io/badge/Laravel-5.0-orange.svg?style=flat-square)](http://laravel.com)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://tldrlegal.com/license/mit-license)
 
 I love Kint, but it's a little hard to get it to work perfectly within Laravel. This plugin solves that, and adds some new features as well.
+
+Kint is just a pretty replacement for **[var_dump()](http://php.net/manual/en/function.var-dump.php)**, **[print_r()](http://php.net/manual/en/function.print-r.php)** and **[debug_backtrace()](http://php.net/manual/en/function.debug-backtrace.php)**.
 
 [Laravel 5 Documentation](https://github.com/rtconner/laravel-kint/tree/laravel-5)
 [Laravel 4 Documentation](https://github.com/rtconner/laravel-kint/tree/laravel-4)
@@ -47,7 +54,7 @@ Notice no semi-colon at the end, and must be on their own line of code.
 ```
 @d($var)
 
-@dd($var)
+@dd($var) //if require laravel-kint/init_helpers.php in public/index.php it will be work
 
 @s($var)
 ```
@@ -65,13 +72,18 @@ See [Kint documentation](https://github.com/kint-php/kint) for details on config
 
 ### How Do I Override Laravel's dd() method?
 
-This package overwrite laravel dd by default, you can comment this line from public/index.php and only use d() and s() functions.
+Please require init_helpers.php in laravel public/index.php before require bootstrap/autoload.php.
+Your public/index.php should be like:
 
 ```
-define('KINT_DIR', '/path_to_your_project_root/vendor/rtconner/laravel-kint');
+require '/var/www/html/vendor/rtconner/laravel-kint/init_helpers.php'; // path to init_helpers.php of laravel kint package
+
+require __DIR__.'/../bootstrap/autoload.php';
 ```
 
-Be carefull when change your app directory please update this line.
+or
+
+define dd function before require bootstrap/autoload.php and use [Kint function](https://github.com/kint-php/kint)
 
 #### Credits
 

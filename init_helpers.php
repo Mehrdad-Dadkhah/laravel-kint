@@ -1,5 +1,8 @@
 <?php
 
+$basePath   = explode('vendor', __DIR__)[0];
+require $basePath.'/vendor/kint-php/kint/src/Kint.php';
+
 if (!function_exists('d')) {
     /**
      * Alias of Kint::dump().
