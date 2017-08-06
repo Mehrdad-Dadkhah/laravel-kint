@@ -22,7 +22,7 @@ Laravel 5 branch update to use last version of Kint(v2) by [Mehrdad Dadkhah](htt
 
 Install with composer
 
-    composer require rtconner/laravel-kint "~2.0"
+    composer require rtconner/laravel-kint "~3.0"
 
 Then add this to `config/app.php`
 
@@ -41,22 +41,13 @@ Optionally setup the [config/kint.php](config/kint.php) file
 Use Kint as you would normally.
 
 ```php
-dd($var); // debug dump and die
-
 d($var); // debug dump
 
 s($var); // simple print
 ```
 
-There is an also an added feature to allow you to easily dump variables from within **blade templates**.
-Notice no semi-colon at the end, and must be on their own line of code.
-
 ```
-@d($var)
-
 @dd($var) //if require laravel-kint/init_helpers.php in public/index.php it will be work
-
-@s($var)
 ```
 
 ### Configure

@@ -38,7 +38,6 @@ class KintServiceProvider extends ServiceProvider {
 	protected function registerConfigs()
 	{
 		$configs = config('kint');
-
 		if(empty($configs)) {
 			return;
 		}
@@ -56,17 +55,8 @@ class KintServiceProvider extends ServiceProvider {
 			Blade::directive('d', function($variable) {
 				return "<?php echo d($variable); ?>";
 			});
- 			Blade::directive('dd', function($variable) {
- 				return "<?php echo dd($variable); ?>";
- 			});
- 			Blade::directive('ddd', function($variable) {
- 				return "<?php echo ddd($variable); ?>";
- 			});
  			Blade::directive('s', function($variable) {
  				return "<?php echo s($variable); ?>";
- 			});
- 			Blade::directive('sd', function($variable) {
- 				return "<?php echo sd($variable); ?>";
  			});
 		}
 	}
