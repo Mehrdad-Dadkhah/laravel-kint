@@ -3,8 +3,8 @@ Seamless Laravel 5 / Kint Integration
 This package add d() and s() function for help you debigging with beautifull trace of code. 
 If you want find a dd() of laravel and you don't know the location of it you can use this package.
 
-![Screenshot1](https://github.com/Mehrdad-Dadkhah/laravel-kint/images/sample-kint1.png)
-![Screenshot2](https://github.com/Mehrdad-Dadkhah/laravel-kint/images/sample-kint1.png)
+![Screenshot1](https://github.com/Mehrdad-Dadkhah/laravel-kint/blob/laravel-5/images/sample-kint1.png)
+![Screenshot2](https://github.com/Mehrdad-Dadkhah/laravel-kint/blob/laravel-5/images/sample-kint2.png)
 
 [![Laravel](https://img.shields.io/badge/Laravel-5.0-orange.svg?style=flat-square)](http://laravel.com)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://tldrlegal.com/license/mit-license)
